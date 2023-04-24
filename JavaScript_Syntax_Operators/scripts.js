@@ -99,3 +99,56 @@ function Math() {
   result = price--;
   box.innerHTML += "<p>price-- =</p>" + result.toString();
 }
+
+//Truely and Falsely
+
+function trueFalse() {
+  let price = 100,
+    color = "RED";
+
+  result = price > 50;
+  box.innerHTML += result + "<br>";
+
+  if (color) {
+    box.innerHTML += "color is " + color + "<br>";
+  }
+
+  color = "";
+  if (!color) {
+    box.innerHTML += "Flase color value" + "<br>";
+  }
+}
+
+// Logical Operator
+function LogicalOperators() {
+  let price = 200;
+
+  if (price > 100 && price < 300) {
+    box.innerHTML += "<span>And Operator both should be true</span><br>";
+  }
+  if (price > 100 || price < 200) {
+    box.innerHTML += "<span>Or Operator only one should be true</span><br>";
+  }
+  if (!(price < 10)) {
+    box.innerHTML +=
+      "<span>Not Operator toggles true to false and vice versa</span><br>";
+  }
+}
+
+// Short Circuting
+function ShortCircuting() {
+  let color = "Black",
+    value = 100;
+
+  result = isColorRed(color) && isGreaterThan500(value);
+}
+
+function isColorRed(color) {
+  box.innerHTML += "<span>Color Block</span><br>";
+  return color === "RED";
+}
+
+function isGreaterThan500(value) {
+  box.innerHTML += "<span>Value Block</span><br>";
+  return value > 500;
+}
