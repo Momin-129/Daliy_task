@@ -1,4 +1,6 @@
 let box = document.getElementById("content");
+
+//Switch Case Statement
 function SwitchCase() {
   let choice = 2;
   switch (choice) {
@@ -25,6 +27,7 @@ function SwitchCase() {
   }
 }
 
+// For/In and For/Of loops
 function ForIn() {
   let product = [
     {
@@ -55,4 +58,44 @@ function ForIn() {
     }
     console.log(JSON.stringify(item));
   }
+}
+
+//Math Functions
+
+function Math() {
+  let price = 200;
+  let result = 0;
+  box.innerHTML += "<p>price =</p>" + price;
+
+  //Addition
+  result = price + 100;
+  box.innerHTML += "<p>price + 100 =</p>" + result;
+
+  //Subtaction
+  result = price - 10;
+  box.innerHTML += "<p>price - 10 =</p>" + result.toString();
+
+  //Multiplication
+  result = price * 2;
+  box.innerHTML += "<p>price * 2 =</p>" + result.toString();
+
+  //Division
+  result = price / 2;
+  box.innerHTML += "<p>price / 2 =</p>" + result.toString();
+
+  //Exponentiation
+  result = price ** 2;
+  box.innerHTML += "<p>price ** 2 =</p>" + result.toString();
+
+  //Modulus
+  result = price % 3;
+  box.innerHTML += "<p>price % 3 =</p>" + result.toString();
+
+  //Increment
+  result = price++;
+  box.innerHTML += "<p>price++ =</p>" + result.toString();
+
+  //Decrement
+  result = price--;
+  box.innerHTML += "<p>price-- =</p>" + result.toString();
 }
