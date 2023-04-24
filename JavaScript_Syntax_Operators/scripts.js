@@ -152,3 +152,19 @@ function isGreaterThan500(value) {
   box.innerHTML += "<span>Value Block</span><br>";
   return value > 500;
 }
+
+//Exception Handling
+function tryCatch() {
+  let result;
+  try {
+    result = x / 10;
+    console.log(result);
+  } catch (error) {
+    throw {
+      message: "Variable Not Defined Error: " + error.message,
+      name: error.name,
+    };
+  } finally {
+    console.log("This will run in any case");
+  }
+}
