@@ -168,3 +168,101 @@ function tryCatch() {
     console.log("This will run in any case");
   }
 }
+
+//Types of Operator
+function TypeOf() {
+  let prod = { firstName: "Momin", age: 23 };
+  let introDate = new Date();
+  let strValue = new String();
+  let isActive = false;
+  let result;
+  let value = null;
+
+  console.log("prod = " + typeof prod);
+  console.log("prod.firstName = " + typeof prod.firstName);
+  console.log("prod.age = " + typeof prod.age);
+  console.log("introDate = " + typeof introDate);
+  console.log("strValue = " + typeof strValue);
+  console.log("isActive = " + typeof isActive);
+  console.log("result = " + typeof result);
+  console.log("value = " + typeof value);
+}
+
+//Casting to Constructor
+function CastConstruct() {
+  let prod = { firstName: "Momin", age: 23 };
+  let introDate = new Date();
+  let strValue = new String();
+  let isActive = false;
+
+  console.log("prod = " + prod.constructor.toString());
+  console.log("prod.firstName = " + prod.firstName.constructor.toString());
+  console.log("prod.age = " + prod.age.constructor.toString());
+  console.log("introDate = " + introDate.constructor.toString());
+  console.log("strValue = " + strValue.constructor.toString());
+  console.log("isActive = " + isActive.constructor.toString());
+}
+
+//Helper Functions
+function helperFunction() {
+  let arr = [1, 2, 3, 4];
+  let introDate = new Date();
+  let result;
+  let value = null;
+
+  console.log("arr is Array? =" + isArray(arr));
+  console.log("introDate is Date? =" + isDate(introDate));
+  console.log(
+    "result =" + isNullOrUndefined(result) ? "null/undefined" : "declared"
+  );
+  console.log(
+    "value =" + isNullOrUndefined(value) ? "null/undefined" : "declared"
+  );
+}
+
+function isArray(value) {
+  return value.constructor.toString().indexOf("Array") > -1;
+}
+
+function isDate(value) {
+  return value.constructor.toString().indexOf("Date") > -1;
+}
+
+function isNullOrUndefined(value) {
+  return value === null || value === undefined;
+}
+
+//Instance Of Function
+function InstanceOf() {
+  let prod = new Product(680, "Circular Fram - Black", "FR=R928");
+  let dt = new Date();
+  let name = new String("Product Name");
+  let value = "A simple String";
+
+  console.log(
+    "prod instanceof Product = " + (prod instanceof Product).toString()
+  );
+  console.log(
+    "prod instanceof Object = " + (prod instanceof Object).toString()
+  );
+  console.log("dt instanceof  Date= " + (dt instanceof Date).toString());
+  console.log("dt instanceof Product = " + (dt instanceof Object).toString());
+  console.log(
+    "name instanceof String = " + (name instanceof String).toString()
+  );
+  console.log(
+    "value instanceof String = " + (value instanceof String).toString()
+  );
+  console.log(
+    "value instanceof Object = " + (value instanceof Object).toString()
+  );
+}
+
+function Product(id, name, number) {
+  this.productID = id;
+  this.name = name;
+  this.productNumber = number;
+  this.color = "Black";
+  this.standardCost = 10;
+  this.listPrice = 40;
+}
