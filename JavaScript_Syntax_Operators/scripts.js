@@ -1,3 +1,5 @@
+"use strict";
+
 let box = document.getElementById("content");
 
 //Switch Case Statement
@@ -245,7 +247,7 @@ function InstanceOf() {
   console.log(
     "prod instanceof Object = " + (prod instanceof Object).toString()
   );
-  console.log("dt instanceof  Date= " + (dt instanceof Date).toString());
+  console.log("date instanceof  Date= " + (dt instanceof Date).toString());
   console.log("dt instanceof Product = " + (dt instanceof Object).toString());
   console.log(
     "name instanceof String = " + (name instanceof String).toString()
@@ -258,11 +260,61 @@ function InstanceOf() {
   );
 }
 
-function Product(id, name, number) {
+function Product(id, name, cost, price) {
   this.productID = id;
   this.name = name;
-  this.productNumber = number;
   this.color = "Black";
-  this.standardCost = 10;
-  this.listPrice = 40;
+  this.standardCost = cost;
+  this.listPrice = price;
+  this.grossProfit = function () {
+    return (this.listPrice - this.standardCost).toLocaleString("en-US", {
+      style: "currency",
+      currency: "INR",
+    });
+  };
+}
+
+//this Keyword in JavaScript
+console.log("Begin: Global Scope:");
+console.log("this.toString()");
+console.log("this ===  window is " + (this === window).toString());
+console.log("End: Global Scope");
+
+function functionScope() {
+  console.log(this.toString());
+  console.log("this ===  window is " + (this === window).toString());
+}
+
+function eventHandler(value) {
+  console.log(value.toString());
+}
+
+function objectLiteral() {
+  let product = {
+    productID: 680,
+    name: "Round Fram - Black",
+    standardCost: 1150,
+    listPrice: 1500,
+    grossProfit: function () {
+      return (this.listPrice - this.standardCost).toLocaleString("en-US", {
+        style: "currency",
+        currency: "INR",
+      });
+    },
+  };
+
+  let prod2 = { standardCost: 543, listPrice: 972 };
+  console.log(product.grossProfit.call(product)); // call takes arguments seprately.
+  console.log(product.grossProfit.call(prod2));
+  console.log("");
+  console.log(product.grossProfit.apply(product)); // apply takes arguments as an array.
+  console.log(product.grossProfit.apply(prod2));
+}
+
+function constructFunctions() {
+  let prod_1 = new Product(680, "HL Road Frma -Black", 1059.31, 1431.5);
+  let prod_2 = new Product(707, "Sports-100 Helmet, Red", 13.08, 34.99);
+
+  console.log(prod_1.grossProfit());
+  console.log(prod_2.grossProfit());
 }
