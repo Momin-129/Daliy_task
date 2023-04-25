@@ -318,3 +318,111 @@ function constructFunctions() {
   console.log(prod_1.grossProfit());
   console.log(prod_2.grossProfit());
 }
+
+//Spread Operator (...)
+function stringToArray() {
+  let productNumber = "FR 8923 58";
+  let values = [...productNumber];
+  console.log(values);
+}
+
+function copyArray() {
+  let arr = [1, 2, 3];
+  let arr2 = [...arr];
+
+  arr2.push(4);
+  arr2[0] = 123;
+
+  console.log(arr);
+  console.log(arr2);
+}
+
+let _product = [
+  {
+    productID: 680,
+    name: "Round Frame",
+    productNumber: 1324,
+    color: "Black",
+    standardCost: 1234,
+    listPrice: 1455,
+  },
+  {
+    productID: 707,
+    name: "Square Frame",
+    productNumber: 1345,
+    color: "Black",
+    standardCost: 1390,
+    listPrice: 1980,
+  },
+  {
+    productID: 808,
+    name: "Rectangle Frame",
+    productNumber: 1350,
+    color: "Black",
+    standardCost: 1239,
+    listPrice: 1470,
+  },
+];
+
+let _newProduct = [
+  {
+    productID: 682,
+    name: "Round Frame",
+    productNumber: 1324,
+    color: "Black",
+    standardCost: 1234,
+    listPrice: 1455,
+  },
+  {
+    productID: 717,
+    name: "Square Frame",
+    productNumber: 1345,
+    color: "Black",
+    standardCost: 1390,
+    listPrice: 1980,
+  },
+  {
+    productID: 888,
+    name: "Rectangle Frame",
+    productNumber: 1350,
+    color: "Black",
+    standardCost: 1239,
+    listPrice: 1470,
+  },
+];
+
+function copyObjectArrays() {
+  let diff = [..._product];
+  diff[0].productID = 999; // incase of object values are copied by reference
+  // so changing this changes original array
+  console.log(_product[0].productID);
+  console.log(diff[0].productID);
+}
+
+function concatenateArray() {
+  let allProducts = _product.concat(_newProduct); //general way to concatenate
+  console.log(allProducts.length);
+
+  let spProducts = [..._product, ..._newProduct]; // concatinate using spread operator
+  console.log(spProducts.length);
+}
+
+function spreadInConstructors() {
+  let dt = new Date(2023, 10, 15);
+  console.log(dt);
+
+  let dateFeild = [2023, 11, 12];
+  dt = new Date(...dateFeild);
+  console.log(dt);
+}
+
+function spreadForFunction() {
+  let args = [1, 2, 3];
+  multipleParams(...args);
+}
+
+function multipleParams(arg1, arg2, arg3) {
+  console.log(arg1);
+  console.log(arg2);
+  console.log(arg3);
+}
