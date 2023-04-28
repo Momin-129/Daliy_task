@@ -52,6 +52,17 @@
 }
 
 {
+  //Configurable attibute prevents a property from changing even the configurable attribute cannot be set true once set to false
+  let person = {
+    firstName: "Momin",
+    lastName: "Rather",
+    age: 23,
+  };
+  Object.defineProperty(person, "firstName", { configurable: false });
+  Object.defineProperty(person, "firstName", { configurable: true });
+}
+
+{
   //get and set methods for object properties
   let person = {
     firstName: "Momin",
