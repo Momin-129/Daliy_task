@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        padding: 3vh 3vw;
+      }
+      .output {
+        border: 2px solid black;
+        border-radius: 5px;
+        height: 50vh;
+        padding: 5vh 5vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="output" id="output"><b>OUTPUT</b><br /><br /></div>
+    <script>
+      let output = document.getElementById("output");
+      function displayOutput(msg) {
+        output.innerHTML += msg;
+      }
+
+      let message = "<b>Hello World</b>";
+      displayOutput(message);
+      console.log(message);
+    </script>
+  </body>
+</html>
