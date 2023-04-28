@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        padding: 3vh 3vw;
+      }
+      .output {
+        border: 2px solid black;
+        border-radius: 5px;
+        height: 50vh;
+        padding: 3vh 3vw;
+        overflow-y: auto;
+        scrollbar-width: thin;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" onclick="dateDisplay();">GO</button>
+    <br /><br />
+    <div class="output" id="output"><b>OUTPUT</b><br /><br /></div>
+    <script>
+      function displayMessage(msg) {
+        output.innerHTML += msg;
+      }
+      function dateDisplay() {
+        let output = document.getElementById("ouptut");
+        let msg = "<b>Date Functions</b><br>";
+        const date = new Date();
+        msg += "To create a new Date Object const date = new Date()<br>";
+        msg +=
+          "To get full year: date.getFullYear()= " +
+          date.getFullYear() +
+          "<br>";
+        msg += "To get month: date.getMonth()= " + date.getMonth() + "<br>";
+        msg += "To get date: date.getDate()= " + date.getDate() + "<br>";
+        msg += "To get day: date.getDay()= " + date.getDay() + "<br>";
+        msg += "To get hours: date.getHours()= " + date.getHours() + "<br>";
+        msg +=
+          "To get minutes: date.getMinutes()= " + date.getMinutes() + "<br>";
+        msg +=
+          "To get seconds: date.getSeconds()= " + date.getSeconds() + "<br>";
+        displayMessage(msg);
+      }
+    </script>
+  </body>
+</html>

@@ -12,21 +12,50 @@
         border: 2px solid black;
         border-radius: 5px;
         height: 50vh;
-        padding: 5vh 5vw;
+        padding: 3vh 3vw;
+        overflow-y: auto;
+        scrollbar-width: thin;
       }
     </style>
   </head>
   <body>
+    <h5>Enter a number to perform math operations:</h5>
+    <button type="button" onclick="MathFunction();">GO</button>
+    <br /><br />
     <div class="output" id="output"><b>OUTPUT</b><br /><br /></div>
     <script>
-      let output = document.getElementById("output");
       function displayOutput(msg) {
         output.innerHTML += msg;
       }
+      function MathFunction() {
+        let output = document.getElementById("output");
+        let msg = "<b>Some Math Functions</b><br>";
+        msg += "Math.E // returns Euler's number " + Math.E + "<br>";
+        msg += "Math.PI  // returns PI " + Math.PI + "<br>";
+        msg +=
+          "Math.SQRT2  // returns the square root of 2 " + Math.SQRT2 + "<br>";
+        msg +=
+          "Math.SQRT1_2  // returns the square root of 1/2 " +
+          Math.SQRT1_2 +
+          "<br>";
+        msg +=
+          "Math.LN2      // returns the natural logarithm of 2 " +
+          Math.LN2 +
+          "<br>";
+        msg += "Math.E // returns Euler's number " + Math.E + "<br>";
+        msg += "Math.E // returns Euler's number " + Math.E + "<br>";
+        msg += "Math.E // returns Euler's number " + Math.E + "<br>";
 
-      let message = "<b>Hello World</b>";
-      displayOutput(message);
-      console.log(message);
+        msg += "<b>Some Math Methods</b><br>";
+        msg += "Math.round(4.6) " + Math.round(4.6) + "<br>";
+        msg += "Math.ceil(4.9) " + Math.ceil(4.9) + "<br>";
+        msg += "Math.round(4.6) " + Math.floor(4.9) + "<br>";
+        msg += "Math.trunc(4.9); " + Math.trunc(4.9) + "<br>";
+        msg += "Math.pow(8, 2); " + Math.pow(8, 2) + "<br>";
+        msg += "Math.abs(-4.7); " + Math.trunc(4.9) + "<br>";
+
+        displayOutput(msg);
+      }
     </script>
   </body>
 </html>
