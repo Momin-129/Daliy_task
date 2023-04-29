@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1>JavaScript Functions</h1>
+    <script>
+      {
+        function greetings() {
+          return "Hello Momin";
+          // let message = "John Cooper";
+        }
+
+        let greet = greetings();
+        console.log(greet);
+        //console.log(message); // Refereence Error : trying to access element outside the scope of function
+      }
+      // **************************************
+      {
+        function sum(num1, num2) {
+          return num1 + num2;
+        }
+        let result = sum(23, 9);
+        console.log(result);
+      }
+      // **************************************
+      {
+        function printAll() {
+          for (let i = 0; i < arguments.length; i++) console.log(arguments[i]);
+        }
+
+        printAll(1, 2, 3, 4);
+        printAll(20, 23);
+      }
+      // **************************************
+      {
+        //Immediately Invoked Function Expression (IIFE)
+        (function () {
+          console.log("Hello");
+        })();
+      }
+      // *************************************
+      {
+        //Closures
+        let greeting = (function () {
+          let message = "Closures";
+          let getMessage = function () {
+            return message;
+          };
+          //this is closure
+          return { getMessage: getMessage };
+        })();
+        console.log(greeting.getMessage());
+      }
+    </script>
+  </body>
+</html>
