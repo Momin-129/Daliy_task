@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1>JavaScript Functions</h1>
+    <script>
+      {
+        //call() method
+        console.log("\ncall() Method:");
+        let person1 = { name: "Momin", age: 23 };
+        let person2 = { name: "Ibtsam", age: 22 };
+
+        let sayHI = function () {
+          console.log("Hi " + this.name);
+        };
+
+        sayHI.call(person1);
+        sayHI.call(person2);
+      }
+
+      {
+        //apply() method
+        console.log("\napply() Method:");
+        function intrduction(name, profession) {
+          console.log("My Name is " + name + " and I am a " + profession + ".");
+        }
+        intrduction("Momin", "Programmer");
+        intrduction.call(undefined, "Ibtsam", "Economist");
+        intrduction.apply(undefined, ["Ashima", "Painter"]);
+      }
+
+      {
+        //bind() method
+        console.log("\nbind() Method:");
+        let person1 = {
+          name: "Mary",
+          getName: function () {
+            return this.name;
+          },
+        };
+
+        let person2 = { name: "John" };
+        let getNameCopy = person1.getName.bind(person2);
+        console.log(person1.getName());
+        console.log(getNameCopy());
+      }
+
+      {
+        //eval() method
+        console.log("\neval() method:");
+        let intX = 1,
+          intY = 2,
+          strS = "abc";
+        console.log(eval("intX+intY+strS"));
+      }
+
+      {
+        //parseInt() method
+        console.log("\nparseInt() method:");
+        let intX = "15",
+          intY = "F",
+          strS = "A";
+        console.log(parseInt(intX, 10));
+        console.log(parseInt(intY, 16));
+        console.log(parseInt(strS));
+      }
+
+      {
+        //escape()  & unescape() method
+        console.log("\nescape()  & unescape() method:");
+        console.log('Escape for "text" :' + escape("text"));
+        console.log('Escape for " " :' + escape(" "));
+        console.log("\n");
+        console.log('Unescape for "text" :' + unescape("text"));
+        console.log('Unescape for "%20" :' + unescape("%20"));
+      }
+    </script>
+  </body>
+</html>
