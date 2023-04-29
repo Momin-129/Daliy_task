@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        padding: 3vh 3vw;
+      }
+      .output {
+        border: 2px solid black;
+        border-radius: 5px;
+        height: 50vh;
+        padding: 3vh 3vw;
+        overflow-y: auto;
+        scrollbar-width: thin;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="mail">Email:</label>
+    <input type="email" id="email" value="" />
+    <button type="button" onclick="checkMail();">Check Validity</button>
+    <br /><br />
+    <div class="output" id="output"><b>OUTPUT</b><br /><br /></div>
+    <script>
+      function displayMessage(msg) {
+        alert("IN Display");
+        document.getElementById("output").innerHTML = msg;
+      }
+      function checkMail() {
+        let msg = "Invalid";
+        let email = document.getElementById("email").value;
+        let regex = new RegExp(
+          /^([a-zA-z0-9_\.\-])+\@(([a-zA-z0-9])+\.)+([a-zA-z0-9]{2,4})+$/g
+        );
+
+        let result = regex.test(email);
+        if (result) msg = "Valid";
+        displayMessage(msg);
+      }
+    </script>
+  </body>
+</html>
