@@ -3,7 +3,7 @@ let pieCtx = document.getElementById("deptSales").getContext("2d");
 
 let quaterRevenue = document.getElementById("quaterRevenue");
 
-let monthlySales = Array.of(12000, 9000, 3000);
+let monthlySales = Array.of(500, 9000, 3000);
 let monthLables = Array.of("Oct", "Nov", "Dec");
 
 let deptSales = Array.of(12, 9, 3);
@@ -23,11 +23,14 @@ let total = Array.of(
   addQuaterTotal(...decNums)
 );
 
-// alert(addQuaterTotal(...total));
-
 let quaterTotal = addQuaterTotal(...monthlySales);
 
 quaterRevenue.innerHTML = "$" + quaterTotal;
+
+function findOver1000() {
+  let firstThousand = monthlySales.findIndex((element) => element > 1000);
+  alert(firstThousand);
+}
 
 var monthlySalesChart = new Chart(ctx, {
   type: "bar",
