@@ -1,0 +1,15 @@
+body {
+  background-color: lightgrey;
+}
+
+.section {
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 0 black;
+  background-color: white;
+  text-align: center;
+}
+.section p {
+  font-size: 24px;
+  font-weight: bold;
+}
