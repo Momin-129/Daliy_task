@@ -9,27 +9,35 @@ let monthLables = Array.of("Oct", "Nov", "Dec");
 let deptSales = Array.of(12, 9, 3);
 let deptLabels = Array.of("Hiking", "Running", "Hunting");
 
-function addQuaterTotal(firstMonth, secondMonth, thirdMonth) {
-  return firstMonth + secondMonth + thirdMonth;
+let quaterTotal = 0;
+function addQuaterTotal(value) {
+  quaterTotal += value;
 }
 
 let octNums = Array.of(1200, 1000, 9000);
 let novNums = Array.of(1100, 2000, 9000);
 let decNums = Array.of(4000, 1000, 5000);
 
-let total = Array.of(
-  addQuaterTotal(...octNums),
-  addQuaterTotal(...novNums),
-  addQuaterTotal(...decNums)
-);
+// let total = Array.of(
+//   addQuaterTotal(...octNums),
+//   addQuaterTotal(...novNums),
+//   addQuaterTotal(...decNums)
+// );
 
-let quaterTotal = addQuaterTotal(...monthlySales);
+// let quaterTotal = addQuaterTotal(...monthlySales);
+
+monthlySales.forEach(addQuaterTotal);
 
 quaterRevenue.innerHTML = "$" + quaterTotal;
 
 function findOver1000() {
   let firstThousand = monthlySales.findIndex((element) => element > 1000);
   alert(firstThousand);
+}
+
+function resetNum() {
+  monthlySales.fill(0);
+  monthlySalesChart.update();
 }
 
 var monthlySalesChart = new Chart(ctx, {
